@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+echo "$(whoami)" "$(date)" $1 >> /var/log/udev-debug.log
+

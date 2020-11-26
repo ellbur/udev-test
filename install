@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+sudo cp -f -a rule /etc/udev/rules.d/80-usb-keyboard.rules
+sudo chown root:root /etc/udev/rules.d/80-usb-keyboard.rules
+sudo chmod 644 /etc/udev/rules.d/80-usb-keyboard.rules
+
+sudo cp -f -a udev-debug /usr/local/bin/udev-debug
+sudo chown root:root /usr/local/bin/udev-debug
+sudo chmod 755 /usr/local/bin/udev-debug
+
+echo -n | sudo tee /var/log/udev-debug.log
+sudo chmod 666 /var/log/udev-debug.log
+
+sudo udevadm control --reload
+sudo udevadm trigger
+

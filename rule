@@ -1,0 +1,1 @@
+SUBSYSTEMS=="usb", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceProtocol}=="01", ACTION=="add", RUN+="/usr/local/bin/udev-debug %p"
